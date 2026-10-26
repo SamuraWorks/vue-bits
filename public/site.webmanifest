@@ -1,0 +1,17 @@
+{
+  "name": "SaloneSchool",
+  "short_name": "SaloneSchool",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/saloneschool-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#090d0b",
+  "background_color": "#090d0b",
+  "display": "standalone"
+}

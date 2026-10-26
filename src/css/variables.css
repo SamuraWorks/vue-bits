@@ -1,0 +1,20 @@
+:root {
+  color-scheme: dark;
+  --bg-body: #090d0b;
+  --bg-elevated: #0d1510;
+  --bg-card: #101912;
+  --bg-soft: #15231a;
+  --border-primary: rgba(225, 255, 238, 0.1);
+  --border-strong: rgba(225, 255, 238, 0.17);
+  --color-primary: #00ffa9;
+  --color-accent: #7af8c7;
+  --color-blue: #73c9ed;
+  --text-primary: #f2f8f4;
+  --text-secondary: #c4d1c8;
+  --text-muted: #87968c;
+  --text-subtle: #617067;
+  --font-body: var(--font-geist-sans);
+  --radius-card: 17px;
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.22);
+  --gradient-title: linear-gradient(130deg, #f2f8f4 0%, #7af8c7 58%, #73c9ed 100%);
+}
