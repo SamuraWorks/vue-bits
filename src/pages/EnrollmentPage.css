@@ -2,6 +2,8 @@
 .ln-enrollment-content { width: min(100%, 480px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
 .ln-enrollment-logo { display: inline-flex; border-radius: 14px; outline-offset: 4px; }
 .ln-enrollment-logo img { display: block; width: 64px; height: 64px; }
+.ln-school-brand { display: grid; width: 68px; height: 68px; margin-bottom: -6px; place-items: center; overflow: hidden; border: 1px solid var(--border-primary); border-radius: 18px; background: var(--bg-elevated); }
+.ln-school-brand img { width: 100%; height: 100%; object-fit: contain; }
 .ln-enrollment-card { width: 100%; padding: clamp(24px, 6vw, 40px); border: 1px solid var(--border-primary); border-radius: 20px; background: var(--bg-card); box-shadow: var(--shadow-soft); text-align: center; }
 .ln-enrollment-eyebrow { margin: 0 0 10px; color: var(--text-muted); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
 .ln-enrollment-card h1 { margin: 0; font-size: clamp(25px, 6vw, 34px); letter-spacing: -.05em; line-height: 1.12; }
@@ -19,6 +21,7 @@
 .ln-enrollment-form input { width: 100%; min-height: 46px; padding: 0 13px; border: 1px solid var(--border-primary); border-radius: 10px; background: var(--bg-elevated); color: var(--text-primary); font: inherit; font-size: 13px; }
 .ln-enrollment-form input:focus { border-color: var(--text-primary); outline: 2px solid color-mix(in srgb, var(--text-primary) 18%, transparent); outline-offset: 1px; }
 .ln-primary-button { min-height: 48px; margin-top: 10px; border: 0; border-radius: 10px; background: var(--text-primary); color: var(--bg-card); cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; }
+.ln-verification-message { margin: 0 0 6px; padding: 11px 12px; border: 1px solid color-mix(in srgb, #16704a 25%, var(--border-primary)); border-radius: 10px; background: color-mix(in srgb, #16704a 7%, var(--bg-elevated)); color: #16704a; font-size: 12px; line-height: 1.5; text-align: center; }
 .ln-form-error, .ln-success-message { margin: 2px 0 0; font-size: 12px; line-height: 1.5; text-align: center; }
 .ln-form-error { color: #b42318; }
 .ln-success-message { color: #16704a; }

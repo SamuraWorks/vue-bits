@@ -19,9 +19,9 @@
           <span>SCHOOL MANAGEMENT SYSTEM</span>
         </div>
 
-        <h1 id="ln-hero-title" aria-label="School management for Sierra Leone.">
+        <h1 id="ln-hero-title" aria-label="Powering brighter schools across Sierra Leone.">
           <span>School</span>
-          <span>management for</span>
+          <span>Powering brighter schools across</span>
           <span class="ln-hero-title-accent">Sierra Leone.</span>
         </h1>
 
