@@ -328,6 +328,7 @@
 
 .ln-role-switch {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   margin: 19px 0 12px;
   padding: 4px;

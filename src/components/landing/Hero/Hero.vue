@@ -16,23 +16,23 @@
           </span>
           <span>SIERRA LEONE</span>
           <span class="ln-hero-eyebrow-separator" aria-hidden="true">/</span>
-          <span>SCHOOL COMMUNITY PLATFORM</span>
+          <span>SCHOOL MANAGEMENT SYSTEM</span>
         </div>
 
-        <h1 id="ln-hero-title" aria-label="Every School, One Connected Community.">
-          <span>Every School,</span>
-          <span>One Connected</span>
-          <span class="ln-hero-title-accent">Community.</span>
+        <h1 id="ln-hero-title" aria-label="School management for Sierra Leone.">
+          <span>School</span>
+          <span>management for</span>
+          <span class="ln-hero-title-accent">Sierra Leone.</span>
         </h1>
 
         <p class="ln-hero-description">
-          A shared place for school records, class life and family communication — designed around the communities of
-          Sierra Leone.
+          A school management system designed to bring student records, attendance, fees, examinations, staff and family
+          communication into one school-focused workspace.
         </p>
 
         <div class="ln-hero-actions">
-          <a class="ln-button ln-button--primary" href="#find-school">
-            Find your school
+          <RouterLink class="ln-button ln-button--primary" to="/login">
+            Login
             <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path
                 d="M4.2 10h11.6M10.4 4.6 15.8 10l-5.4 5.4"
@@ -42,17 +42,17 @@
                 stroke-linejoin="round"
               />
             </svg>
-          </a>
-          <a class="ln-button ln-button--quiet" href="#platform">Explore the platform</a>
+          </RouterLink>
+          <a class="ln-button ln-button--quiet" href="#platform">Explore school management</a>
         </div>
 
         <div class="ln-hero-caption">
           <span class="ln-hero-caption-dot" aria-hidden="true"></span>
-          <span>For students, parents, teachers and school teams</span>
+          <span>Role-aware views for school leaders, staff, students and parents</span>
         </div>
       </div>
 
-      <div class="ln-hero-preview" aria-label="Illustrative SaloneSchool portal preview">
+      <div class="ln-hero-preview" role="group" aria-label="Illustrative Xkul-Salone school management portal preview">
         <div class="ln-dashboard-frame">
           <div class="ln-dashboard-topbar">
             <div class="ln-dashboard-window-dots" aria-hidden="true">
@@ -61,8 +61,8 @@
               <span></span>
             </div>
             <div class="ln-dashboard-wordmark">
-              <span class="ln-dashboard-mark" aria-hidden="true">S</span>
-              SaloneSchool
+              <span class="ln-dashboard-mark" aria-hidden="true">X</span>
+              Xkul-Salone
             </div>
             <span class="ln-dashboard-status">CONCEPT PREVIEW</span>
           </div>
@@ -73,7 +73,7 @@
                 <p class="ln-dashboard-overline">ROLE-AWARE PORTAL</p>
                 <h2>One school, the right view.</h2>
               </div>
-              <span class="ln-dashboard-lock" aria-label="Access is based on school membership">
+              <span class="ln-dashboard-lock" aria-hidden="true">
                 <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
                   <rect x="3.25" y="7.25" width="11.5" height="8" rx="1.7" stroke="currentColor" stroke-width="1.3" />
                   <path
@@ -160,40 +160,59 @@ type PortalRole = {
 
 const portalRoles: PortalRole[] = [
   {
+    id: 'super-admin',
+    label: 'Super Admin',
+    audience: 'PLATFORM ADMIN',
+    title: 'Platform governance',
+    description: 'Platform-level tools for managing approved school workspaces and accounts.',
+    initial: 'S',
+    items: ['School workspaces', 'Account and role access', 'System settings']
+  },
+  {
+    id: 'ministry',
+    label: 'Ministry',
+    audience: 'MINISTRY OF EDUCATION',
+    title: 'National oversight',
+    description: 'A planned reporting view for authorized Ministry of Education personnel.',
+    initial: 'M',
+    items: ['School-submitted reports', 'NPSE, BECE and WASSCE', 'Accreditation and inspection']
+  },
+  {
+    id: 'school-admin',
+    label: 'School Admin',
+    audience: 'SCHOOL ADMIN',
+    title: 'School operations',
+    description: 'School-wide management tools for authorized administrators.',
+    initial: 'A',
+    items: ['School profile and terms', 'Student and staff records', 'School reports']
+  },
+  {
+    id: 'staff',
+    label: 'Staff',
+    audience: 'SCHOOL STAFF',
+    title: 'Work by responsibility',
+    description:
+      'Principals, librarians, accountants, teachers, subject masters, class masters and Heads of Department (HOD) access the tools assigned to their work.',
+    initial: 'T',
+    items: ['Principal and HOD overview', 'Library and account workflows', 'Classes, subjects and attendance']
+  },
+  {
     id: 'student',
     label: 'Student',
     audience: 'STUDENT VIEW',
     title: 'Your learning day',
-    description: 'A place for the school information students need.',
+    description: 'A student view of learning information shared by the school.',
     initial: 'S',
     items: ['Timetable', 'Results', 'School announcements']
   },
   {
     id: 'parent',
     label: 'Parent',
-    audience: 'PARENT VIEW',
+    audience: 'PARENT / GUARDIAN VIEW',
     title: 'Stay connected',
-    description: 'A family view of updates shared by the school.',
+    description: 'A family view for parents and guardians of school updates and student progress.',
     initial: 'P',
     items: ['Attendance', 'Report cards', 'School updates']
-  },
-  {
-    id: 'teacher',
-    label: 'Teacher',
-    audience: 'TEACHER VIEW',
-    title: 'Teaching space',
-    description: 'A role-based view of classes and school routines.',
-    initial: 'T',
-    items: ['Classes and subjects', 'Attendance', 'Examinations']
-  },
-  {
-    id: 'admin',
-    label: 'School admin',
-    audience: 'ADMIN VIEW',
-    title: 'School operations',
-    description: 'Tools organized around an authorized school membership.',
-    initial: 'A',
-    items: ['Student records', 'School fees', 'Administration']
   }
 ];
 

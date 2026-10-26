@@ -1,11 +1,11 @@
 {
-  "name": "SaloneSchool",
-  "short_name": "SaloneSchool",
+  "name": "Xkul-Salone School Management",
+  "short_name": "Xkul-Salone",
   "start_url": "/",
   "scope": "/",
   "icons": [
     {
-      "src": "/saloneschool-mark.svg",
+      "src": "/xkul-salone-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

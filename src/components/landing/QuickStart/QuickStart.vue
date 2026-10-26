@@ -7,12 +7,13 @@
           HOW IT WORKS
         </p>
         <h2 id="ln-process-title">
-          From school to
+          School management,
           <br />
-          <span>shared community.</span>
+          <span>one clear workflow.</span>
         </h2>
         <p class="ln-section-lead">
-          A simple, school-first journey for bringing people, records and everyday routines together.
+          Bring student records, attendance, examinations, fees, staff responsibilities and family communication into one
+          school-focused system.
         </p>
       </div>
 
@@ -47,10 +48,12 @@
                 <span></span>
               </div>
               <div class="ln-step-role-chips">
+                <span>Super Admin</span>
+                <span>Ministry</span>
+                <span>School Admin</span>
+                <span>Staff</span>
                 <span>Student</span>
                 <span>Parent</span>
-                <span>Teacher</span>
-                <span>School team</span>
               </div>
             </template>
 
@@ -79,7 +82,7 @@
 
       <p class="ln-process-disclosure" data-reveal>
         <span aria-hidden="true">i</span>
-        This is the intended platform journey. School onboarding and account sign-in are not live in this preview.
+        This is the intended school management workflow. Portal sign-in and live school data are not connected in this preview.
       </p>
     </div>
   </section>
@@ -89,23 +92,23 @@
 const steps = [
   {
     number: '01',
-    caption: 'SCHOOL ONBOARDING',
-    title: 'A school joins',
-    description: 'School leaders request a school space and confirm the details for their institution.',
+    caption: 'SCHOOL SETUP',
+    title: 'Set up the school',
+    description: 'Organize the school profile, class structure and day-to-day records in one workspace.',
     visual: 'school'
   },
   {
     number: '02',
-    caption: 'AUTHORIZED ACCESS',
-    title: 'People get the right view',
-    description: 'Portal access is designed around each person’s role and authorized school membership.',
+    caption: 'ROLE-AWARE ACCESS',
+    title: 'Assign each role its view',
+    description: 'Plan access for platform administrators, Ministry users, school leaders, staff, students and parents.',
     visual: 'roles'
   },
   {
     number: '03',
-    caption: 'CONNECTED SCHOOL LIFE',
-    title: 'Everyday work connects',
-    description: 'Records, classes, attendance, results, fees and school updates belong to one community.',
+    caption: 'DAILY OPERATIONS',
+    title: 'Manage the school day',
+    description: 'Bring records, attendance, examinations, fees and school communication into one workflow.',
     visual: 'platform'
   }
 ];

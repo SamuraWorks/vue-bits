@@ -12,7 +12,8 @@
           <span>All connected.</span>
         </h2>
         <p class="ln-section-lead">
-          A school-centered platform designed to bring the essential parts of school life into one shared community.
+          Manage the essential operations of a school — from student enrollment and class schedules to examinations, fees
+          and family communication — in one school-focused system.
         </p>
       </div>
 

@@ -1,8 +1,8 @@
 {
-  "name": "saloneschool",
+  "name": "xkul-salone",
   "version": "0.0.0",
   "private": true,
-  "description": "A school management platform designed for Sierra Leone.",
+  "description": "The school management system for Sierra Leone, powered by Syscend.",
   "type": "module",
   "packageManager": "pnpm@10.34.3",
   "scripts": {

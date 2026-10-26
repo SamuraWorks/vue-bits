@@ -2,30 +2,31 @@
   <footer class="ln-footer">
     <div class="ln-footer-main">
       <div class="ln-footer-brand-column">
-        <a class="ln-brand ln-footer-brand" href="#top" aria-label="SaloneSchool home">
-          <span class="ln-brand-mark" aria-hidden="true">S</span>
+        <a class="ln-brand ln-footer-brand" href="#top" aria-label="Xkul-Salone school management home">
+          <span class="ln-brand-mark" aria-hidden="true">X</span>
           <span class="ln-brand-copy">
-            <span class="ln-brand-name">SaloneSchool</span>
+            <span class="ln-brand-name">Xkul-Salone</span>
             <span class="ln-brand-location">SIERRA LEONE</span>
           </span>
         </a>
-        <p class="ln-footer-tagline">Every School, One Connected Community.</p>
-        <p class="ln-footer-description">A school management platform designed for the communities of Sierra Leone.</p>
+        <p class="ln-footer-tagline">School Management for Sierra Leone.</p>
+        <p class="ln-footer-description">Student records, attendance, examinations, fees and school teams in one school-focused system.</p>
+        <p class="ln-footer-powered">Powered by <strong>Syscend</strong></p>
       </div>
 
-      <nav class="ln-footer-nav" aria-label="Platform links">
-        <h2>Platform</h2>
-        <a href="#platform">Features</a>
+      <nav class="ln-footer-nav" aria-label="School management links">
+        <h2>School management</h2>
+        <a href="#platform">Modules</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#for-schools">Role-aware access</a>
         <a href="#ministry-portal">Ministry portal concept</a>
-        <a href="#find-school">Find a school</a>
       </nav>
 
-      <nav class="ln-footer-nav" aria-label="School community links">
-        <h2>School community</h2>
+      <nav class="ln-footer-nav" aria-label="School access links">
+        <h2>Access</h2>
         <a href="#for-schools">For schools</a>
-        <a href="#portal-access">Register a school</a>
-        <a href="#portal-access">Portal access</a>
+        <RouterLink to="/login">Login</RouterLink>
+        <a href="#ministry-portal">Ministry portal</a>
       </nav>
 
       <div class="ln-footer-note-column">
@@ -33,13 +34,13 @@
           <i aria-hidden="true"></i>
           SIERRA LEONE
         </span>
-        <p>School directory, registration and portal sign-in are not live yet.</p>
+        <p>Portal sign-in and live school records are not connected in this preview.</p>
       </div>
     </div>
 
     <div class="ln-footer-bottom">
-      <span>© {{ currentYear }} SaloneSchool</span>
-      <span>Every School, One Connected Community.</span>
+      <span>© {{ currentYear }} Xkul-Salone</span>
+      <span>School management system for Sierra Leone · Powered by Syscend</span>
       <a href="#top">
         Back to top
         <span aria-hidden="true">↑</span>

@@ -75,13 +75,13 @@
           FOR SCHOOLS
         </p>
         <h2 id="ln-schools-title">
-          A school-first
+          A school management
           <br />
-          <span>community platform.</span>
+          <span>system for Sierra Leone.</span>
         </h2>
         <p class="ln-schools-lead">
-          SaloneSchool is being designed around the needs of Sierra Leone schools — keeping each institution at the
-          center of its own people, records and communication.
+          Xkul-Salone is designed around the day-to-day work of Sierra Leone schools — student records, attendance,
+          examinations, fees, staff responsibilities and communication with families.
         </p>
 
         <ul class="ln-school-benefits">
@@ -95,8 +95,8 @@
           <li>
             <span aria-hidden="true">02</span>
             <span>
-              <strong>Role-aware portals</strong>
-              <small>Shape access around students, families, educators and school teams.</small>
+              <strong>Role-aware school portals</strong>
+              <small>Separate views for Super Admin, Ministry of Education, School Admin, staff, students and parents.</small>
             </span>
           </li>
           <li>
@@ -109,8 +109,8 @@
         </ul>
 
         <div class="ln-schools-actions">
-          <a class="ln-button ln-button--primary" href="#portal-access">Register your school</a>
-          <span>School onboarding is not open yet.</span>
+          <RouterLink class="ln-button ln-button--primary" to="/login">Login</RouterLink>
+          <span>Portal sign-in is not connected in this preview.</span>
         </div>
       </div>
     </div>

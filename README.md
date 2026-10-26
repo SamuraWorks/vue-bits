@@ -1,10 +1,10 @@
-# SaloneSchool
+# Xkul-Salone
 
-**Every School, One Connected Community.**
+**School Management for Sierra Leone.**
 
-SaloneSchool is a school management platform designed for Sierra Leone, bringing school communities and the work of each school into one connected experience.
+Xkul-Salone is a school management system concept for Sierra Leone schools, covering student records, attendance, examinations, fees, school staff and role-aware portals for administrators, Ministry users, students and parents.
 
-The current project focuses on the public homepage. School discovery, registration, sign-in and role-based portals are not connected to live school or account data yet.
+This repository contains the public homepage and a login-page preview. Authentication, live school records and Ministry system connections are not configured; the login fields are intentionally disabled and do not collect credentials.
 
 ## Development
 

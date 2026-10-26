@@ -8,7 +8,6 @@
       <Features />
       <QuickStart />
       <MinistryPortal />
-      <SchoolDiscovery />
       <Ownership />
       <CTA />
       <Footer />
@@ -27,7 +26,6 @@ import MinistryPortal from '@/components/landing/MinistryPortal/MinistryPortal.v
 import Navbar from '@/components/landing/Navbar/Navbar.vue';
 import Ownership from '@/components/landing/Ownership/Ownership.vue';
 import QuickStart from '@/components/landing/QuickStart/QuickStart.vue';
-import SchoolDiscovery from '@/components/landing/LiveDemo/LiveDemo.vue';
 
 const MIN_LOADER_MS = 800;
 const loaded = ref(false);

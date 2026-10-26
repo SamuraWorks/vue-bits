@@ -23,6 +23,19 @@
   font-weight: 560;
   letter-spacing: -0.025em;
 }
+.ln-footer-powered {
+  margin: 11px 0 0;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.ln-footer-powered strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
 .ln-footer-description {
   max-width: 30ch;
   margin: 8px 0 0;

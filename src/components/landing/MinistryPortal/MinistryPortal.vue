@@ -11,7 +11,7 @@
           <span>designed for national oversight.</span>
         </h2>
         <p class="ln-ministry-lead">
-          SaloneSchool is being designed with a dedicated Ministry of Education portal for school-submitted
+          Xkul-Salone is being designed with a dedicated Ministry of Education portal for school-submitted
           reporting, NPSE, BECE and WASSCE readiness, and accreditation and inspection workflows—while each school
           keeps its own school-managed space.
         </p>
@@ -60,7 +60,7 @@
         <div class="ln-ministry-orb" aria-hidden="true"></div>
         <div class="ln-ministry-window">
           <div class="ln-ministry-window-bar">
-            <span class="ln-ministry-mark" aria-hidden="true">S</span>
+            <span class="ln-ministry-mark" aria-hidden="true">X</span>
             <div class="ln-ministry-window-brand">
               <span>SIERRA LEONE · FUTURE VIEW</span>
               <strong>Ministry of Education</strong>

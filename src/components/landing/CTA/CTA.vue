@@ -1,5 +1,5 @@
 <template>
-  <section id="portal-access" class="ln-cta-section" aria-labelledby="ln-cta-title">
+  <section id="school-management-cta" class="ln-cta-section" aria-labelledby="ln-cta-title">
     <div class="ln-cta-shell" data-reveal>
       <div class="ln-cta-orbit ln-cta-orbit--one" aria-hidden="true"></div>
       <div class="ln-cta-orbit ln-cta-orbit--two" aria-hidden="true"></div>
@@ -15,13 +15,13 @@
           <span>one connected community.</span>
         </h2>
         <p class="ln-cta-description">
-          SaloneSchool is being built for the people who make school life work — across every school community in Sierra
-          Leone.
+          Xkul-Salone is a school management system designed for Sierra Leone — bringing student records, attendance,
+          examinations, fees and school teams into one place.
         </p>
 
         <div class="ln-cta-actions">
-          <a class="ln-button ln-button--primary" href="#for-schools">
-            Register your school
+          <RouterLink class="ln-button ln-button--primary" to="/login">
+            Login
             <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path
                 d="M4.2 10h11.6M10.4 4.6l5.4 5.4-5.4 5.4"
@@ -31,17 +31,17 @@
                 stroke-linejoin="round"
               />
             </svg>
-          </a>
-          <a class="ln-button ln-button--quiet" href="#find-school">Find your school</a>
+          </RouterLink>
+          <a class="ln-button ln-button--quiet" href="#platform">Explore school management</a>
         </div>
 
         <div class="ln-cta-status" role="note">
           <span aria-hidden="true"></span>
-          School registration, directory search and portal sign-in are not live yet. This page does not collect accounts
-          or requests.
+          Portal sign-in and live school records are not connected in this preview. It does not collect credentials or
+          school data.
         </div>
         <p class="ln-cta-access-note">
-          When portal access is available, it will be based on role and authorized school membership.
+          Portal access is planned around role and authorized school membership.
         </p>
       </div>
     </div>
