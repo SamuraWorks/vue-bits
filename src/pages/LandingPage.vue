@@ -7,6 +7,7 @@
       <Hero />
       <Features />
       <QuickStart />
+      <MinistryPortal />
       <SchoolDiscovery />
       <Ownership />
       <CTA />
@@ -22,6 +23,7 @@ import Features from '@/components/landing/Features/Features.vue';
 import Footer from '@/components/landing/Footer/Footer.vue';
 import Hero from '@/components/landing/Hero/Hero.vue';
 import LandingLoader from '@/components/landing/LandingLoader/LandingLoader.vue';
+import MinistryPortal from '@/components/landing/MinistryPortal/MinistryPortal.vue';
 import Navbar from '@/components/landing/Navbar/Navbar.vue';
 import Ownership from '@/components/landing/Ownership/Ownership.vue';
 import QuickStart from '@/components/landing/QuickStart/QuickStart.vue';

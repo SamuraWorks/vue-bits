@@ -17,6 +17,7 @@
         <h2>Platform</h2>
         <a href="#platform">Features</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#ministry-portal">Ministry portal concept</a>
         <a href="#find-school">Find a school</a>
       </nav>
 

@@ -8,7 +8,12 @@ The current project focuses on the public homepage. School discovery, registrati
 
 ## Development
 
-Install the project dependencies, then use `npm run dev` to start the Vite preview. `npm run build` runs the type check and creates a production build.
+```bash
+pnpm install
+pnpm dev
+```
+
+`pnpm build` runs the type check and creates a production build.
 
 ## License
 

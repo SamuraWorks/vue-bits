@@ -61,6 +61,7 @@ import { onMounted, onUnmounted, ref, watch } from 'vue';
 const navigationLinks = [
   { label: 'Platform', href: '#platform' },
   { label: 'How it works', href: '#how-it-works' },
+  { label: 'Ministry portal', href: '#ministry-portal' },
   { label: 'Find a school', href: '#find-school' },
   { label: 'For schools', href: '#for-schools' }
 ];

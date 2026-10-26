@@ -170,7 +170,7 @@ const features = [
   },
   {
     title: 'Exams, results and report cards',
-    description: 'Keep assessments, results and student reporting together in the school space.',
+    description: 'Organize term assessments and future NPSE, BECE and WASSCE workflows alongside results and report cards.',
     visual: 'reports'
   },
   {
