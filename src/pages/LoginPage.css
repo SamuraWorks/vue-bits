@@ -42,6 +42,7 @@
 
 .ln-login-card h1 {
   margin: 0 0 26px;
+  text-align: center;
   color: var(--text-primary);
   font-family: var(--font-geist-sans);
   font-size: clamp(28px, 6vw, 36px);
@@ -92,9 +93,9 @@
   margin-top: 10px;
   border: 1px solid var(--border-primary);
   border-radius: 10px;
-  background: var(--bg-soft);
-  color: var(--text-secondary);
-  cursor: not-allowed;
+  background: var(--text-primary);
+  color: var(--bg-card);
+  cursor: pointer;
   font: inherit;
   font-size: 13px;
   font-weight: 650;
@@ -105,6 +106,7 @@
   color: var(--text-muted);
   font-size: 11px;
   line-height: 1.6;
+  text-align: center;
 }
 
 .ln-login-powered {

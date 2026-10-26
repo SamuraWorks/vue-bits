@@ -1,0 +1,27 @@
+.ln-enrollment-page { min-height: 100vh; display: grid; grid-template-rows: 1fr auto; justify-items: center; padding: 24px 18px 20px; background: var(--bg-body); color: var(--text-primary); }
+.ln-enrollment-content { width: min(100%, 480px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+.ln-enrollment-logo { display: inline-flex; border-radius: 14px; outline-offset: 4px; }
+.ln-enrollment-logo img { display: block; width: 64px; height: 64px; }
+.ln-enrollment-card { width: 100%; padding: clamp(24px, 6vw, 40px); border: 1px solid var(--border-primary); border-radius: 20px; background: var(--bg-card); box-shadow: var(--shadow-soft); text-align: center; }
+.ln-enrollment-eyebrow { margin: 0 0 10px; color: var(--text-muted); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.ln-enrollment-card h1 { margin: 0; font-size: clamp(25px, 6vw, 34px); letter-spacing: -.05em; line-height: 1.12; }
+.ln-enrollment-intro { margin: 12px auto 26px; max-width: 380px; color: var(--text-secondary); font-size: 13px; line-height: 1.6; }
+.ln-role-fieldset { margin: 0; padding: 0; border: 0; }
+.ln-role-fieldset legend { width: 100%; margin-bottom: 12px; color: var(--text-secondary); font-size: 13px; font-weight: 650; }
+.ln-role-options { display: grid; gap: 10px; text-align: left; }
+.ln-role-option { display: grid; gap: 4px; padding: 15px; border: 1px solid var(--border-primary); border-radius: 12px; background: var(--bg-elevated); color: var(--text-primary); text-align: left; cursor: pointer; font: inherit; transition: border-color .2s, transform .2s; }
+.ln-role-option:hover, .ln-role-option:focus-visible { border-color: var(--text-primary); transform: translateY(-1px); }
+.ln-role-option span { color: var(--text-muted); font-size: 12px; }
+.ln-enrollment-form { display: grid; gap: 10px; text-align: left; }
+.ln-back-button { justify-self: start; padding: 0; border: 0; background: none; color: var(--text-muted); cursor: pointer; font: inherit; font-size: 12px; }
+.ln-selected-role { margin: 2px 0 8px; color: var(--text-secondary); font-size: 13px; text-align: center; }
+.ln-enrollment-form label { margin-top: 5px; color: var(--text-secondary); font-size: 12px; font-weight: 600; }
+.ln-enrollment-form input { width: 100%; min-height: 46px; padding: 0 13px; border: 1px solid var(--border-primary); border-radius: 10px; background: var(--bg-elevated); color: var(--text-primary); font: inherit; font-size: 13px; }
+.ln-enrollment-form input:focus { border-color: var(--text-primary); outline: 2px solid color-mix(in srgb, var(--text-primary) 18%, transparent); outline-offset: 1px; }
+.ln-primary-button { min-height: 48px; margin-top: 10px; border: 0; border-radius: 10px; background: var(--text-primary); color: var(--bg-card); cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; }
+.ln-form-error, .ln-success-message { margin: 2px 0 0; font-size: 12px; line-height: 1.5; text-align: center; }
+.ln-form-error { color: #b42318; }
+.ln-success-message { color: #16704a; }
+.ln-enrollment-powered { align-self: end; margin: 26px 0 0; color: var(--text-muted); font-size: 11px; }
+.ln-enrollment-powered strong { color: var(--text-primary); }
+@media (max-width: 520px) { .ln-enrollment-page { padding: 18px 16px 16px; } .ln-enrollment-card { border-radius: 16px; } }

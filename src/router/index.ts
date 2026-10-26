@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 import LandingPage from '@/pages/LandingPage.vue';
 import LoginPage from '@/pages/LoginPage.vue';
+import EnrollmentPage from '@/pages/EnrollmentPage.vue';
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home', component: LandingPage },
   { path: '/login', name: 'login', component: LoginPage, meta: { title: 'Login | Xkul-Salone' } },
+  { path: '/enroll', name: 'enroll', component: EnrollmentPage, meta: { title: 'Join your school | Xkul-Salone' } },
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 

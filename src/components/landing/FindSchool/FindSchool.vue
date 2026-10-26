@@ -53,8 +53,8 @@
             </span>
             <RouterLink
               class="ln-find-school-login"
-              :to="{ path: '/login', query: { school: school.name } }"
-              :aria-label="`Continue to Login for ${school.name}`"
+              :to="{ path: '/enroll', query: { school: school.name } }"
+              :aria-label="`Continue to enrollment for ${school.name}`"
             >
               Continue to Login
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
