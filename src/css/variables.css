@@ -33,7 +33,7 @@
   --text-primary: #14251b;
   --text-secondary: #384e42;
   --text-muted: #66776c;
-  --text-subtle: #8f9c93;
+  --text-subtle: #66776c;
   --shadow-soft: 0 18px 50px rgba(15, 45, 28, 0.1);
   --gradient-title: linear-gradient(130deg, #14251b 0%, #087f5b 58%, #176b8e 100%);
 }

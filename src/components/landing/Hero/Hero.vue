@@ -43,7 +43,7 @@
               />
             </svg>
           </RouterLink>
-          <a class="ln-button ln-button--quiet" href="#platform">Explore school management</a>
+          <a class="ln-button ln-button--quiet" href="#find-school">Find your school</a>
         </div>
 
         <div class="ln-hero-caption">

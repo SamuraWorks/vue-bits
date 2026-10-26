@@ -8,6 +8,8 @@
       <Features />
       <QuickStart />
       <MinistryPortal />
+      <SchoolFinder />
+      <BookDemo />
       <Ownership />
       <CTA />
       <Footer />
@@ -17,8 +19,10 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue';
+import BookDemo from '@/components/landing/BookDemo/BookDemo.vue';
 import CTA from '@/components/landing/CTA/CTA.vue';
 import Features from '@/components/landing/Features/Features.vue';
+import SchoolFinder from '@/components/landing/FindSchool/FindSchool.vue';
 import Footer from '@/components/landing/Footer/Footer.vue';
 import Hero from '@/components/landing/Hero/Hero.vue';
 import LandingLoader from '@/components/landing/LandingLoader/LandingLoader.vue';

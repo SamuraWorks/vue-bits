@@ -1,0 +1,212 @@
+.ln-book-demo-section {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 24px 120px;
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-body);
+}
+
+.ln-book-demo-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 80px);
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.ln-book-demo-copy,
+.ln-book-demo-card {
+  min-width: 0;
+}
+
+.ln-book-demo-copy h2 span {
+  display: block;
+}
+
+.ln-book-demo-copy-note {
+  max-width: 380px;
+  margin: 24px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ln-book-demo-points {
+  display: grid;
+  gap: 10px;
+  margin-top: 27px;
+}
+
+.ln-book-demo-points > span {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.ln-book-demo-points i {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  color: var(--color-primary);
+  font-family: var(--font-geist-mono);
+  font-size: 9px;
+  font-style: normal;
+}
+
+.ln-book-demo-card {
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid var(--border-primary);
+  border-radius: 22px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.ln-book-demo-form {
+  display: grid;
+  gap: 24px;
+}
+
+.ln-book-demo-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ln-book-demo-form legend {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.ln-book-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+}
+
+.ln-book-demo-field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ln-book-demo-field--wide {
+  grid-column: 1 / -1;
+}
+
+.ln-book-demo-field input,
+.ln-book-demo-field select {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 12px;
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  outline: 0;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.ln-book-demo-field input::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+.ln-book-demo-field select:invalid {
+  color: var(--text-subtle);
+}
+
+.ln-book-demo-field input:focus-visible,
+.ln-book-demo-field select:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.ln-book-demo-submit-row {
+  display: grid;
+  gap: 12px;
+}
+
+.ln-book-demo-submit-row p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.ln-book-demo-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--border-primary);
+  border-radius: 11px;
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.ln-book-demo-submit svg {
+  width: 17px;
+  height: 17px;
+}
+
+@media (max-width: 900px) {
+  .ln-book-demo-shell {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .ln-book-demo-copy-note {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ln-book-demo-section {
+    padding: 76px 18px 82px;
+  }
+
+  .ln-book-demo-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .ln-book-demo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ln-book-demo-field--wide {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ln-book-demo-field input,
+  .ln-book-demo-field select {
+    transition: none;
+  }
+}

@@ -73,13 +73,6 @@
   letter-spacing: -0.04em;
 }
 
-.ln-brand-location {
-  color: var(--text-muted);
-  font-family: var(--font-geist-mono);
-  font-size: 7px;
-  letter-spacing: 0.16em;
-}
-
 .ln-desktop-nav {
   display: flex;
   align-items: center;
@@ -286,9 +279,6 @@
     width: 31px;
     height: 31px;
     border-radius: 9px;
-  }
-  .ln-brand-location {
-    display: none;
   }
   .ln-brand-name {
     font-size: 12px;

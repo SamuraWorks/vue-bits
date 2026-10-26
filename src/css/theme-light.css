@@ -83,6 +83,26 @@
   background: rgba(8, 127, 91, 0.06);
 }
 
+:root[data-theme='light'] .ln-hero h1 {
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+:root[data-theme='light'] .ln-hero .ln-hero-title-accent {
+  color: var(--color-accent);
+  text-shadow: none;
+}
+
+:root[data-theme='light'] .ln-button--primary {
+  color: #ffffff;
+}
+
+:root[data-theme='light'] .ln-button--primary:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
 :root[data-theme='light'] .ln-brand-mark,
 :root[data-theme='light'] .ln-login-brand-mark {
   border-color: rgba(8, 127, 91, 0.34);

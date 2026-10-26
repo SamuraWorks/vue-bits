@@ -5,7 +5,6 @@
         <span class="ln-brand-mark" aria-hidden="true">X</span>
         <span class="ln-brand-copy">
           <strong>Xkul-Salone</strong>
-          <small>SIERRA LEONE</small>
         </span>
       </RouterLink>
 
@@ -64,6 +63,8 @@ const navigationLinks = [
   { label: 'Platform', href: '#platform' },
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Ministry portal', href: '#ministry-portal' },
+  { label: 'Find your school', href: '#find-school' },
+  { label: 'Book a demo', href: '#book-demo' },
   { label: 'For schools', href: '#for-schools' }
 ];
 

@@ -32,7 +32,7 @@
               />
             </svg>
           </RouterLink>
-          <a class="ln-button ln-button--quiet" href="#platform">Explore school management</a>
+          <a class="ln-button ln-button--quiet" href="#book-demo">Book a demo</a>
         </div>
 
         <div class="ln-cta-status" role="note">

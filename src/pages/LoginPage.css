@@ -47,13 +47,6 @@
   letter-spacing: -0.04em;
 }
 
-.ln-login-brand-copy small {
-  color: var(--text-muted);
-  font-family: var(--font-geist-mono);
-  font-size: 7px;
-  letter-spacing: 0.16em;
-}
-
 .ln-login-header-actions {
   display: flex;
   align-items: center;
@@ -126,6 +119,21 @@
   color: var(--text-muted);
   font-size: 13px;
   line-height: 1.7;
+}
+
+.ln-login-selected-school {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ln-login-selected-school strong {
+  color: var(--text-primary);
 }
 
 .ln-login-status {

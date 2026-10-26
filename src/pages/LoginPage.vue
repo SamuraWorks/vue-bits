@@ -5,7 +5,6 @@
         <span class="ln-login-brand-mark" aria-hidden="true">X</span>
         <span class="ln-login-brand-copy">
           <strong>Xkul-Salone</strong>
-          <small>SIERRA LEONE</small>
         </span>
       </RouterLink>
 
@@ -23,6 +22,9 @@
         </p>
         <h1 id="ln-login-title">Login to Xkul-Salone</h1>
         <p class="ln-login-lead">Access your school workspace with the account provided by your school.</p>
+        <p v-if="selectedSchool" class="ln-login-selected-school">
+          Selected school: <strong>{{ selectedSchool }}</strong>
+        </p>
 
         <div id="ln-login-status" class="ln-login-status" role="note">
           <span class="ln-login-status-mark" aria-hidden="true">i</span>
@@ -84,9 +86,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import ThemeToggle from '@/components/ThemeToggle.vue';
 
 const currentYear = new Date().getFullYear();
+const route = useRoute();
+const selectedSchool = computed(() => {
+  const school = route.query.school;
+  return typeof school === 'string' ? school.trim() : '';
+});
 </script>
 
 <style src="./LoginPage.css"></style>

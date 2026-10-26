@@ -6,10 +6,9 @@
           <span class="ln-brand-mark" aria-hidden="true">X</span>
           <span class="ln-brand-copy">
             <span class="ln-brand-name">Xkul-Salone</span>
-            <span class="ln-brand-location">SIERRA LEONE</span>
           </span>
         </a>
-        <p class="ln-footer-tagline">School Management for Sierra Leone.</p>
+        <p class="ln-footer-tagline">School management system.</p>
         <p class="ln-footer-description">Student records, attendance, examinations, fees and school teams in one school-focused system.</p>
         <p class="ln-footer-powered">Powered by <strong>Syscend</strong></p>
       </div>
@@ -26,6 +25,8 @@
         <h2>Access</h2>
         <a href="#for-schools">For schools</a>
         <RouterLink to="/login">Login</RouterLink>
+        <a href="#find-school">Find your school</a>
+        <a href="#book-demo">Book a demo</a>
         <a href="#ministry-portal">Ministry portal</a>
       </nav>
 
