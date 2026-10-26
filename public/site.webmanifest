@@ -1,0 +1,17 @@
+{
+  "name": "Xkul-Salone School Management",
+  "short_name": "Xkul-Salone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/xkul-salone-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#090d0b",
+  "background_color": "#090d0b",
+  "display": "standalone"
+}

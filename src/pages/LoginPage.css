@@ -1,0 +1,132 @@
+.ln-login-page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  padding: 24px 18px 20px;
+  background: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.ln-login-content {
+  display: flex;
+  width: min(100%, 440px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.ln-login-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  outline-offset: 4px;
+}
+
+.ln-login-logo img {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.ln-login-card {
+  width: 100%;
+  padding: clamp(24px, 6vw, 40px);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.ln-login-card h1 {
+  margin: 0 0 26px;
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans);
+  font-size: clamp(28px, 6vw, 36px);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.ln-login-form fieldset {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ln-login-form label {
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ln-login-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 13px;
+}
+
+.ln-login-form input::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+.ln-login-form fieldset:disabled input {
+  opacity: 0.82;
+}
+
+.ln-login-submit {
+  min-height: 48px;
+  margin-top: 10px;
+  border: 1px solid var(--border-primary);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.ln-login-status {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ln-login-powered {
+  align-self: end;
+  margin: 26px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.ln-login-powered strong {
+  color: var(--text-primary);
+  font-weight: 650;
+}
+
+@media (max-width: 520px) {
+  .ln-login-page {
+    padding: 18px 16px 16px;
+  }
+
+  .ln-login-card {
+    border-radius: 16px;
+  }
+}
