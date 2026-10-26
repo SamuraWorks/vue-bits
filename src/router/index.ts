@@ -1,34 +1,19 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 import LandingPage from '@/pages/LandingPage.vue';
-import CategoryPage from '@/pages/CategoryPage.vue';
-import FavoritesPage from '@/pages/FavoritesPage.vue';
-import CategoryLayout from '@/components/layouts/CategoryLayout.vue';
+
+const routes: RouteRecordRaw[] = [
+  { path: '/', name: 'home', component: LandingPage },
+  { path: '/:pathMatch(.*)*', redirect: '/' }
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: LandingPage
-    },
-    {
-      path: '/:category/:subcategory',
-      component: CategoryLayout,
-      children: [
-        {
-          path: '',
-          name: 'category',
-          component: CategoryPage
-        }
-      ]
-    },
-    {
-      path: '/favorites',
-      name: 'favorites',
-      component: FavoritesPage
-    }
-  ]
+  routes,
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) return savedPosition;
+    if (to.hash) return { el: to.hash, top: 88, behavior: 'smooth' };
+    return { top: 0, behavior: 'smooth' };
+  }
 });
 
 export default router;

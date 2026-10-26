@@ -1,61 +1,20 @@
 :root {
-  /* Background colors */
-  --bg-body: #111;
-  --bg-card: #070f07;
-  --bg-elevated: #070f07;
-  --bg-hover: #2a3a2a;
-
-  /* Border colors */
-  --border-primary: #222222;
-  --border-secondary: #222222;
-  --border-subtle: #222222;
-
-  /* Brand colors — Vue green */
-  --color-primary: #7cff67;
-  --color-accent: #a0ffbc;
-  --color-accent-muted: #a0ffbc;
-
-  /* Text colors */
-  --text-primary: #fff;
-  --text-secondary: #f5f5f5;
-  --text-muted: #aaaaaa;
-  --text-dimmed: #a1a1aa;
-  --text-link: #ffffff;
-
-  /* Ghost surfaces (framed card panels: Customize, Props, Dependencies) */
-  --surface-ghost: rgba(255, 255, 255, 0.07);
-  --surface-ghost-track: rgba(255, 255, 255, 0.04);
-  --surface-ghost-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  --inset-border: rgba(255, 255, 255, 0.055);
-  --inset-divider: rgba(255, 255, 255, 0.045);
-
-  /* Radii */
-  --radius-sm: 10px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 50px;
-
-  /* Shadows */
-  --shadow-dropdown: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-primary: 0 2px 8px rgba(66, 184, 131, 0.4);
-
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.2s ease;
-  --transition-slow: 0.3s ease;
-
-  /* Shared gradient for section titles */
-  --gradient-title: linear-gradient(135deg, #fff 0%, #66c2a4 20%, #7cff67 40%, #66c2a4 60%, #7cff67 80%, #fff 100%);
-}
-
-/* Shared keyframes — used by section titles across multiple components */
-@keyframes gradientShift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  color-scheme: dark;
+  --bg-body: #090d0b;
+  --bg-elevated: #0d1510;
+  --bg-card: #101912;
+  --bg-soft: #15231a;
+  --border-primary: rgba(225, 255, 238, 0.1);
+  --border-strong: rgba(225, 255, 238, 0.17);
+  --color-primary: #00ffa9;
+  --color-accent: #7af8c7;
+  --color-blue: #73c9ed;
+  --text-primary: #f2f8f4;
+  --text-secondary: #c4d1c8;
+  --text-muted: #87968c;
+  --text-subtle: #617067;
+  --font-body: var(--font-geist-sans);
+  --radius-card: 17px;
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.22);
+  --gradient-title: linear-gradient(130deg, #f2f8f4 0%, #7af8c7 58%, #73c9ed 100%);
 }

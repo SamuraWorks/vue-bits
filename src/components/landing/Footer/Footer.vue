@@ -1,80 +1,54 @@
-<script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue';
-import vueBitsLogo from '../../../assets/logos/vue-bits-logo.svg';
-import './Footer.css';
-
-const GITHUB_URL = 'https://github.com/DavidHDev/vue-bits';
-const year = new Date().getFullYear();
-
-const innerEl = ref<HTMLDivElement | null>(null);
-const visible = ref(false);
-
-let io: IntersectionObserver | null = null;
-
-onMounted(() => {
-  if (!innerEl.value) return;
-  io = new IntersectionObserver(
-    entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          visible.value = true;
-          io?.disconnect();
-        }
-      }
-    },
-    { threshold: 0.1, rootMargin: '-60px' }
-  );
-  io.observe(innerEl.value);
-});
-
-onBeforeUnmount(() => io?.disconnect());
-</script>
-
 <template>
   <footer class="ln-footer">
-    <div class="ln-footer-glow" />
-    <div class="ln-footer-separator" />
-
-    <div ref="innerEl" class="ln-footer-inner" :class="{ 'is-visible': visible }">
-      <div class="ln-footer-top">
-        <div class="ln-footer-brand">
-          <img :src="vueBitsLogo" alt="Vue Bits" class="ln-footer-logo" />
-          <p class="ln-footer-tagline">Animated UI components for Vue.</p>
-        </div>
-
-        <nav class="ln-footer-nav">
-          <div class="ln-footer-col">
-            <span class="ln-footer-col-title">Product</span>
-            <RouterLink to="/get-started/introduction" class="ln-footer-link">Docs</RouterLink>
-            <a href="https://www.jsrepo.com/" target="_blank" rel="noopener noreferrer" class="ln-footer-link">CLI</a>
-          </div>
-
-          <div class="ln-footer-col">
-            <span class="ln-footer-col-title">Community</span>
-            <a :href="GITHUB_URL" target="_blank" rel="noopener noreferrer" class="ln-footer-link">GitHub</a>
-            <a href="https://reactbits.dev/" target="_blank" rel="noopener noreferrer" class="ln-footer-link">
-              React Bits
-            </a>
-            <a href="https://sveltebits.xyz/" target="_blank" rel="noopener noreferrer" class="ln-footer-link">
-              Svelte Bits
-            </a>
-          </div>
-        </nav>
+    <div class="ln-footer-main">
+      <div class="ln-footer-brand-column">
+        <a class="ln-brand ln-footer-brand" href="#top" aria-label="SaloneSchool home">
+          <span class="ln-brand-mark" aria-hidden="true">S</span>
+          <span class="ln-brand-copy">
+            <span class="ln-brand-name">SaloneSchool</span>
+            <span class="ln-brand-location">SIERRA LEONE</span>
+          </span>
+        </a>
+        <p class="ln-footer-tagline">Every School, One Connected Community.</p>
+        <p class="ln-footer-description">A school management platform designed for the communities of Sierra Leone.</p>
       </div>
 
-      <div class="ln-footer-bottom">
-        <p class="ln-footer-attribution">
-          A Vue port of
-          <a href="https://reactbits.dev/" target="_blank" rel="noopener noreferrer" class="ln-footer-creator">
-            React Bits
-          </a>
-          by
-          <a href="https://x.com/davidhaz" target="_blank" rel="noopener noreferrer" class="ln-footer-creator">
-            davidhaz
-          </a>
-        </p>
-        <p class="ln-footer-copy">© {{ year }} Vue Bits</p>
+      <nav class="ln-footer-nav" aria-label="Platform links">
+        <h2>Platform</h2>
+        <a href="#platform">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#find-school">Find a school</a>
+      </nav>
+
+      <nav class="ln-footer-nav" aria-label="School community links">
+        <h2>School community</h2>
+        <a href="#for-schools">For schools</a>
+        <a href="#portal-access">Register a school</a>
+        <a href="#portal-access">Portal access</a>
+      </nav>
+
+      <div class="ln-footer-note-column">
+        <span class="ln-footer-location-pill">
+          <i aria-hidden="true"></i>
+          SIERRA LEONE
+        </span>
+        <p>School directory, registration and portal sign-in are not live yet.</p>
       </div>
+    </div>
+
+    <div class="ln-footer-bottom">
+      <span>© {{ currentYear }} SaloneSchool</span>
+      <span>Every School, One Connected Community.</span>
+      <a href="#top">
+        Back to top
+        <span aria-hidden="true">↑</span>
+      </a>
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const currentYear = new Date().getFullYear();
+</script>
+
+<style src="./Footer.css"></style>

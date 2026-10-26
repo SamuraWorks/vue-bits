@@ -1,19 +1,18 @@
 {
-  "name": "vue-bits",
+  "name": "saloneschool",
   "version": "0.0.0",
   "private": true,
+  "description": "A school management platform designed for Sierra Leone.",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:registry && run-p type-check \"build-only {@}\" --",
-    "build:registry": "jsrepo build",
+    "build": "npm run type-check && npm run build-only",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "new:component": "node scripts/generateComponent.js",
     "prepare": "husky"
   },
   "dependencies": {

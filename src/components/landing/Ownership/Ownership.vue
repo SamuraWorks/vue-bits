@@ -1,193 +1,120 @@
-<script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
-import { FiEdit3, FiPackage, FiShield } from 'vue-icons-plus/fi';
-
-import './Ownership.css';
-
-type TokenKind = 'kw' | 'comp' | 'attr' | 'str' | 'num' | 'punc';
-type Token = [string, TokenKind];
-
-interface TreeRow {
-  depth: number;
-  name: string;
-  kind: 'dir' | 'file';
-  added?: boolean;
-  active?: boolean;
-}
-
-const POINTS = [
-  {
-    icon: FiPackage,
-    title: 'No wrapper library',
-    desc: 'Components use ogl, GSAP and friends directly, no vue-bits dependency.'
-  },
-  {
-    icon: FiEdit3,
-    title: 'Edit anything',
-    desc: 'It is your source now. Change the shader, the props, the styling, all of it.'
-  },
-  {
-    icon: FiShield,
-    title: 'No lock-in',
-    desc: 'If this site vanished tomorrow, everything you already added keeps working.'
-  }
-];
-
-const TREE: TreeRow[] = [
-  { depth: 0, name: 'your-project', kind: 'dir' },
-  { depth: 1, name: 'src', kind: 'dir' },
-  { depth: 2, name: 'components', kind: 'dir' },
-  { depth: 3, name: 'Aurora.vue', kind: 'file', added: true, active: true },
-  { depth: 3, name: 'Aurora.css', kind: 'file', added: true },
-  { depth: 2, name: 'App.vue', kind: 'file' },
-  { depth: 1, name: 'package.json', kind: 'file' }
-];
-
-const CODE: Token[][] = [
-  [
-    ['import ', 'kw'],
-    ['{ Renderer, Program, Mesh }', 'attr'],
-    [' from ', 'kw'],
-    ["'ogl'", 'str'],
-    [';', 'punc']
-  ],
-  [
-    ['import ', 'kw'],
-    ['{ ref, onMounted }', 'attr'],
-    [' from ', 'kw'],
-    ["'vue'", 'str'],
-    [';', 'punc']
-  ],
-  [],
-  [
-    ['const ', 'kw'],
-    ['props', 'attr'],
-    [' = ', 'punc'],
-    ['defineProps', 'comp'],
-    ['({', 'punc']
-  ],
-  [
-    ['  colorStops', 'attr'],
-    [': [', 'punc'],
-    ["'#5227FF'", 'str'],
-    [', ', 'punc'],
-    ["'#7cff67'", 'str'],
-    ['],', 'punc']
-  ],
-  [
-    ['  speed', 'attr'],
-    [': ', 'punc'],
-    ['1', 'num'],
-    [',', 'punc']
-  ],
-  [
-    ['  blend', 'attr'],
-    [': ', 'punc'],
-    ['0.5', 'num'],
-    [',', 'punc']
-  ],
-  [['});', 'punc']],
-  [],
-  [
-    ['const ', 'kw'],
-    ['ctn', 'attr'],
-    [' = ', 'punc'],
-    ['ref', 'comp'],
-    ['(', 'punc'],
-    ['null', 'kw'],
-    [');', 'punc']
-  ]
-];
-
-const sectionEl = ref<HTMLDivElement | null>(null);
-const visible = ref(false);
-
-let observer: IntersectionObserver | null = null;
-
-onMounted(() => {
-  if (!sectionEl.value) return;
-
-  observer = new IntersectionObserver(
-    entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          visible.value = true;
-          observer?.disconnect();
-        }
-      }
-    },
-    { threshold: 0.1, rootMargin: '-60px' }
-  );
-
-  observer.observe(sectionEl.value);
-});
-
-onUnmounted(() => {
-  observer?.disconnect();
-});
-</script>
-
 <template>
-  <section class="ln-own-section">
-    <div class="ln-own-inner">
-      <div ref="sectionEl" :class="['ln-own-grid', { 'is-visible': visible }]">
-        <div class="ln-own-visual">
-          <div
-            class="ln-own-window"
-            role="img"
-            aria-label="An editor showing Aurora.vue added to your own project as plain, editable source that imports ogl directly"
-          >
-            <div class="ln-own-tabs">
-              <span class="ln-own-tab is-active">Aurora.vue</span>
-              <span class="ln-own-tab">Aurora.css</span>
-            </div>
+  <section id="for-schools" class="ln-schools-section" aria-labelledby="ln-schools-title">
+    <div class="ln-schools-shell">
+      <div class="ln-school-space-card" data-reveal aria-label="Illustrative school space and role access preview">
+        <div class="ln-school-space-window">
+          <div class="ln-school-space-topbar">
+            <span class="ln-school-space-dots" aria-hidden="true">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+            <span>SCHOOL SPACE</span>
+            <span class="ln-school-space-label">ILLUSTRATIVE</span>
+          </div>
 
-            <div class="ln-own-body">
-              <div class="ln-own-tree">
-                <div
-                  v-for="row in TREE"
-                  :key="row.name"
-                  :class="['ln-own-tree-row', { 'is-added': row.added, 'is-active': row.active }]"
-                  :style="{ paddingLeft: `${8 + row.depth * 11}px` }"
-                >
-                  <span class="ln-own-tree-name">{{ row.name }}{{ row.kind === 'dir' ? '/' : '' }}</span>
-                </div>
-              </div>
-
-              <div class="ln-own-code">
-                <div v-for="(line, i) in CODE" :key="i" class="ln-own-code-line">
-                  <span class="ln-own-code-num" aria-hidden="true">{{ i + 1 }}</span>
-                  <span class="ln-own-code-text">
-                    <span v-for="(token, j) in line" :key="j" :class="`ln-own-t-${token[1]}`">{{ token[0] }}</span>
-                  </span>
-                </div>
+          <div class="ln-school-space-content">
+            <div class="ln-school-space-heading">
+              <span class="ln-school-space-mark" aria-hidden="true">S</span>
+              <div>
+                <small>SCHOOL COMMUNITY</small>
+                <strong>One school, its own space</strong>
               </div>
             </div>
 
-            <div class="ln-own-status">
-              <span class="ln-own-status-item">uses ogl directly</span>
-              <span class="ln-own-status-item">no vue-bits package</span>
+            <div class="ln-school-space-divider"></div>
+
+            <div class="ln-school-member-list">
+              <div>
+                <span class="ln-school-member-mark ln-school-member-mark--green">S</span>
+                <span>Students</span>
+                <span>Learning portal</span>
+              </div>
+              <div>
+                <span class="ln-school-member-mark ln-school-member-mark--blue">P</span>
+                <span>Parents</span>
+                <span>Family portal</span>
+              </div>
+              <div>
+                <span class="ln-school-member-mark ln-school-member-mark--green">T</span>
+                <span>Teachers and staff</span>
+                <span>Staff portal</span>
+              </div>
+              <div>
+                <span class="ln-school-member-mark ln-school-member-mark--blue">A</span>
+                <span>Administrators</span>
+                <span>School tools</span>
+              </div>
+            </div>
+
+            <div class="ln-school-access-note">
+              <span class="ln-school-access-icon" aria-hidden="true">
+                <svg viewBox="0 0 18 18" fill="none">
+                  <rect x="3.25" y="7.25" width="11.5" height="8" rx="1.7" stroke="currentColor" stroke-width="1.3" />
+                  <path
+                    d="M5.7 7.2V5.5a3.3 3.3 0 0 1 6.6 0v1.7M9 10.1v2.3"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <span>
+                <small>ACCESS MODEL</small>
+                <strong>Role + authorized school membership</strong>
+              </span>
             </div>
           </div>
         </div>
+        <p class="ln-school-space-disclaimer">Visual concept only — school spaces are not live</p>
+      </div>
 
-        <div class="ln-own-copy">
-          <h2 class="ln-own-title">The code is yours</h2>
-          <p class="ln-own-subtitle">
-            Vue Bits isn't a package you depend on. Each component lands in your repo as source you own.
-          </p>
+      <div class="ln-schools-copy" data-reveal>
+        <p class="ln-section-kicker">
+          <span></span>
+          FOR SCHOOLS
+        </p>
+        <h2 id="ln-schools-title">
+          A school-first
+          <br />
+          <span>community platform.</span>
+        </h2>
+        <p class="ln-schools-lead">
+          SaloneSchool is being designed around the needs of Sierra Leone schools — keeping each institution at the
+          center of its own people, records and communication.
+        </p>
 
-          <ul class="ln-own-points">
-            <li v-for="point in POINTS" :key="point.title" class="ln-own-point">
-              <span class="ln-own-point-icon" aria-hidden="true">
-                <component :is="point.icon" :size="13" />
-              </span>
-              <h3 class="ln-own-point-title">{{ point.title }}</h3>
-              <p class="ln-own-point-desc">{{ point.desc }}</p>
-            </li>
-          </ul>
+        <ul class="ln-school-benefits">
+          <li>
+            <span aria-hidden="true">01</span>
+            <span>
+              <strong>School-specific spaces</strong>
+              <small>Keep each school’s community and information distinct.</small>
+            </span>
+          </li>
+          <li>
+            <span aria-hidden="true">02</span>
+            <span>
+              <strong>Role-aware portals</strong>
+              <small>Shape access around students, families, educators and school teams.</small>
+            </span>
+          </li>
+          <li>
+            <span aria-hidden="true">03</span>
+            <span>
+              <strong>Connected school routines</strong>
+              <small>Bring administration and everyday school life into one experience.</small>
+            </span>
+          </li>
+        </ul>
+
+        <div class="ln-schools-actions">
+          <a class="ln-button ln-button--primary" href="#portal-access">Register your school</a>
+          <span>School onboarding is not open yet.</span>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style src="./Ownership.css"></style>

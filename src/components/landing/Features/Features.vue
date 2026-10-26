@@ -1,141 +1,189 @@
-<script setup lang="ts">
-import { onMounted, ref, type ComponentPublicInstance } from 'vue';
-
-import AITerminal from './AITerminal.vue';
-import CategorySelector from './CategorySelector.vue';
-import ComponentMarquee from './ComponentMarquee.vue';
-import StarCard from './StarCard.vue';
-import VariantTabs from './VariantTabs.vue';
-
-import './Features.css';
-
-type CardKey = 'marquee' | 'orbit' | 'variants' | 'ai' | 'stars';
-
-interface Card {
-  key: CardKey;
-  title: string;
-  desc: string;
-  span: 7 | 5 | 4 | 3;
-}
-
-const CARDS: Card[] = [
-  {
-    key: 'marquee',
-    title: '130+ Components',
-    desc: "Backgrounds, text effects, animations, UI patterns. The stuff you'd build from scratch, already done.",
-    span: 7
-  },
-  {
-    key: 'orbit',
-    title: 'Well Organized',
-    desc: "Five clear categories so you're not scrolling through a wall of unrelated stuff.",
-    span: 5
-  },
-  {
-    key: 'variants',
-    title: 'TypeScript + Tailwind',
-    desc: 'Every component ships as a typed Vue 3 component styled with Tailwind. One stack, done right.',
-    span: 4
-  },
-  {
-    key: 'ai',
-    title: 'AI-Ready',
-    desc: 'Works great with Cursor, Copilot, and v0. Describe what you need, drop it in, ship.',
-    span: 5
-  },
-  {
-    key: 'stars',
-    title: 'Growing Fast',
-    desc: "Vue's newest creative component library. Star us on GitHub to follow along.",
-    span: 3
-  }
-];
-
-const visible = ref<boolean[]>(Array(CARDS.length).fill(false));
-
-const cardEls = ref<(HTMLElement | null)[]>(Array(CARDS.length).fill(null));
-
-function setCardRef(el: Element | ComponentPublicInstance | null, index: number) {
-  cardEls.value[index] = el as HTMLElement | null;
-}
-
-onMounted(() => {
-  if (typeof IntersectionObserver === 'undefined') {
-    visible.value = visible.value.map(() => true);
-    return;
-  }
-
-  const io = new IntersectionObserver(
-    entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-
-        const i = cardEls.value.indexOf(entry.target as HTMLElement);
-
-        if (i === -1) continue;
-
-        visible.value[i] = true;
-
-        io.unobserve(entry.target);
-      }
-    },
-    {
-      rootMargin: '-60px 0px'
-    }
-  );
-
-  for (const el of cardEls.value) {
-    if (el) {
-      io.observe(el);
-    }
-  }
-});
-</script>
-
 <template>
-  <section class="ln-features-section">
-    <div class="ln-features-inner">
-      <h2 class="ln-features-title">What's inside</h2>
+  <section id="platform" class="ln-features-section" aria-labelledby="ln-features-title">
+    <div class="ln-section-shell">
+      <div class="ln-section-intro" data-reveal>
+        <p class="ln-section-kicker">
+          <span></span>
+          THE PLATFORM
+        </p>
+        <h2 id="ln-features-title">
+          One school day.
+          <br />
+          <span>All connected.</span>
+        </h2>
+        <p class="ln-section-lead">
+          A school-centered platform designed to bring the essential parts of school life into one shared community.
+        </p>
+      </div>
 
       <div class="ln-features-grid">
-        <div
-          v-for="(card, i) in CARDS"
-          :key="card.key"
-          :ref="el => setCardRef(el, i)"
-          :class="[
-            'ln-features-card',
-            `ln-features-card--span-${card.span}`,
-            {
-              'is-visible': visible[i]
-            }
-          ]"
-          :style="{
-            transitionDelay: `${i * 70}ms`
-          }"
-        >
-          <div class="ln-features-card-visual">
-            <ComponentMarquee v-if="card.key === 'marquee'" />
-
-            <CategorySelector v-else-if="card.key === 'orbit'" />
-
-            <VariantTabs v-else-if="card.key === 'variants'" />
-
-            <AITerminal v-else-if="card.key === 'ai'" />
-
-            <StarCard v-else-if="card.key === 'stars'" />
+        <article v-for="(feature, index) in features" :key="feature.title" class="ln-feature-card" data-reveal>
+          <div class="ln-feature-card-topline">
+            <span class="ln-feature-index">0{{ index + 1 }}</span>
+            <span class="ln-feature-card-arrow" aria-hidden="true">↗</span>
           </div>
 
-          <div class="ln-features-card-body">
-            <h3>
-              {{ card.title }}
-            </h3>
+          <div class="ln-feature-visual" :class="`ln-feature-visual--${feature.visual}`" aria-hidden="true">
+            <template v-if="feature.visual === 'records'">
+              <div class="ln-record-top">
+                <span>STUDENT RECORD</span>
+                <span class="ln-record-status"></span>
+              </div>
+              <div class="ln-record-profile">
+                <span class="ln-record-avatar"></span>
+                <span class="ln-record-lines">
+                  <i></i>
+                  <i></i>
+                </span>
+              </div>
+              <div class="ln-record-fields">
+                <span>Enrollment</span>
+                <i></i>
+                <span>Student details</span>
+                <i></i>
+              </div>
+            </template>
 
-            <p>
-              {{ card.desc }}
-            </p>
+            <template v-else-if="feature.visual === 'people'">
+              <div class="ln-people-heading">
+                <span>YOUR SCHOOL COMMUNITY</span>
+                <span class="ln-record-status"></span>
+              </div>
+              <div class="ln-people-chips">
+                <span>Student</span>
+                <span>Parent</span>
+                <span>Teacher</span>
+                <span>School team</span>
+              </div>
+              <div class="ln-people-lines">
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+            </template>
+
+            <template v-else-if="feature.visual === 'timetable'">
+              <div class="ln-timetable-head">
+                <span>WEEKLY TIMETABLE</span>
+                <span>CLASS VIEW</span>
+              </div>
+              <div class="ln-timetable-grid">
+                <span v-for="day in 5" :key="day" class="ln-timetable-day">
+                  <i></i>
+                  <b></b>
+                  <i></i>
+                </span>
+              </div>
+              <div class="ln-timetable-legend">
+                <i></i>
+                <span>Class and attendance overview</span>
+              </div>
+            </template>
+
+            <template v-else-if="feature.visual === 'reports'">
+              <div class="ln-report-heading">
+                <span>ASSESSMENT SPACE</span>
+                <span class="ln-report-ring"></span>
+              </div>
+              <div class="ln-report-row">
+                <span class="ln-report-icon"></span>
+                <span>Examinations</span>
+                <i></i>
+              </div>
+              <div class="ln-report-row">
+                <span class="ln-report-icon"></span>
+                <span>Results</span>
+                <i></i>
+              </div>
+              <div class="ln-report-row">
+                <span class="ln-report-icon"></span>
+                <span>Report cards</span>
+                <i></i>
+              </div>
+            </template>
+
+            <template v-else-if="feature.visual === 'fees'">
+              <div class="ln-fee-receipt">
+                <div class="ln-fee-receipt-head">
+                  <span>FEE RECORD</span>
+                  <span class="ln-fee-receipt-mark"></span>
+                </div>
+                <div class="ln-fee-line">
+                  <span>School fees</span>
+                  <i></i>
+                </div>
+                <div class="ln-fee-line">
+                  <span>Payment history</span>
+                  <i></i>
+                </div>
+                <div class="ln-fee-receipt-foot"><span>School-managed records</span></div>
+              </div>
+            </template>
+
+            <template v-else>
+              <div class="ln-community-banner">
+                <span class="ln-community-spark"></span>
+                <span>SCHOOL COMMUNITY</span>
+              </div>
+              <div class="ln-community-message">
+                <i></i>
+                <span>School announcement</span>
+              </div>
+              <div class="ln-community-message ln-community-message--muted">
+                <i></i>
+                <span>Administration</span>
+              </div>
+              <div class="ln-community-footer">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </template>
           </div>
-        </div>
+
+          <div class="ln-feature-card-copy">
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const features = [
+  {
+    title: 'Student enrollment and records',
+    description: 'Keep student profiles and enrollment information organized within each school.',
+    visual: 'records'
+  },
+  {
+    title: 'Teachers, staff, classes and subjects',
+    description: 'Bring school teams, class structures and subject management into a shared view.',
+    visual: 'people'
+  },
+  {
+    title: 'Attendance and timetables',
+    description: 'Connect the school day with attendance routines and class schedules.',
+    visual: 'timetable'
+  },
+  {
+    title: 'Exams, results and report cards',
+    description: 'Keep assessments, results and student reporting together in the school space.',
+    visual: 'reports'
+  },
+  {
+    title: 'School fees and payments',
+    description: 'Give school fee records and payment information a clear, organized home.',
+    visual: 'fees'
+  },
+  {
+    title: 'Announcements and administration',
+    description: 'Support school administration and make room for clear community updates.',
+    visual: 'community'
+  }
+];
+</script>
+
+<style src="./Features.css"></style>

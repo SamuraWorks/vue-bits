@@ -1,18 +1,15 @@
-<script setup lang="ts">
-import logo from '@/assets/logos/vue-bits-logo.svg';
-import './LandingLoader.css';
-
-type Props = {
-  hiding?: boolean;
-};
-
-const props = withDefaults(defineProps<Props>(), {
-  hiding: false
-});
-</script>
-
 <template>
-  <div :class="['ln-loader', props.hiding ? 'ln-loader--hide' : '']">
-    <span class="ln-loader-logo" aria-hidden="true"><img :src="logo" alt="" /></span>
+  <div class="ln-loader" :class="{ 'ln-loader--hide': hiding }" role="status" aria-live="polite">
+    <div class="ln-loader-wordmark" aria-hidden="true">
+      <span class="ln-loader-mark">S</span>
+      <span>SaloneSchool</span>
+    </div>
+    <span class="sr-only">Loading SaloneSchool</span>
   </div>
 </template>
+
+<script setup lang="ts">
+defineProps<{ hiding: boolean }>();
+</script>
+
+<style src="./LandingLoader.css"></style>

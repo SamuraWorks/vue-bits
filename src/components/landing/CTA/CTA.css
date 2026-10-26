@@ -1,217 +1,233 @@
-/* ══════════════════════════════════════════════
-   CTA (Final)
-   ══════════════════════════════════════════════ */
-
-@property --cta-angle {
+@property --ln-cta-angle {
   syntax: '<angle>';
-  initial-value: 0deg;
   inherits: false;
+  initial-value: 0deg;
 }
 
 .ln-cta-section {
   position: relative;
-  width: 100%;
-  padding: 100px 0 160px;
+  overflow: hidden;
+  padding: 95px 24px 105px;
+  border-top: 1px solid rgba(216, 255, 233, 0.07);
   background: var(--bg-body);
-  z-index: 4;
-  overflow: hidden;
 }
 
-.ln-cta-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
-  background: radial-gradient(ellipse, rgba(0, 255, 169, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ─── Inner container ─── */
-
-.ln-cta-inner {
+.ln-cta-shell {
   position: relative;
-  z-index: 1;
-  max-width: 1324px;
+  display: grid;
+  min-height: 410px;
+  place-items: center;
+  overflow: hidden;
+  width: min(100%, 1200px);
   margin: 0 auto;
-  padding: 0 24px;
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.ln-cta-inner.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ─── Card wrapper (holds rotating border) ─── */
-
-.ln-cta-card-wrapper {
-  position: relative;
-}
-
-.ln-cta-card-border {
-  position: absolute;
-  inset: -1px;
-  border-radius: 30px;
-  padding: 1px;
-  background: conic-gradient(
-    from var(--cta-angle),
-    transparent 0%,
-    rgba(0, 255, 169, 0.35) 10%,
-    transparent 20%,
-    transparent 50%,
-    rgba(0, 255, 169, 0.58) 60%,
-    transparent 70%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  animation: cta-border-spin 8s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes cta-border-spin {
-  to {
-    --cta-angle: 360deg;
-  }
-}
-
-/* ─── Card ─── */
-
-.ln-cta-card {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 60px 36px;
+  border: 1px solid rgba(0, 255, 169, 0.12);
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse 52% 60% at 50% 104%, rgba(0, 255, 169, 0.14), transparent 75%),
+    linear-gradient(145deg, rgba(12, 22, 16, 0.97), rgba(8, 14, 10, 0.97));
+  isolation: isolate;
   text-align: center;
-  padding: 100px 0;
-  border-radius: 30px;
-  background: rgba(0, 255, 169, 0.025);
-  backdrop-filter: blur(32px) saturate(1.3);
-  -webkit-backdrop-filter: blur(32px) saturate(1.3);
-  box-shadow:
-    0 4px 32px rgba(0, 0, 0, 0.1),
-    inset 0 0.5px 0 rgba(255, 255, 255, 0.06);
-  overflow: hidden;
 }
 
-.ln-cta-bg {
+.ln-cta-shell::before {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  mix-blend-mode: luminosity;
+  z-index: -1;
+  inset: -1px;
   border-radius: inherit;
-  overflow: hidden;
+  background: conic-gradient(
+    from var(--ln-cta-angle),
+    transparent 18%,
+    rgba(0, 255, 169, 0.38) 28%,
+    transparent 42%,
+    rgba(115, 201, 237, 0.24) 66%,
+    transparent 78%
+  );
+  content: '';
+  animation: ln-cta-border-turn 16s linear infinite;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  padding: 1px;
+}
+
+.ln-cta-shell::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(rgba(239, 255, 245, 0.12) 0.65px, transparent 0.75px);
+  background-size: 16px 16px;
+  content: '';
+  mask-image: radial-gradient(ellipse at 50% 40%, #000, transparent 75%);
+  opacity: 0.25;
+}
+
+.ln-cta-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 370px;
+  height: 370px;
+  border: 1px solid rgba(0, 255, 169, 0.075);
+  border-radius: 50%;
   pointer-events: none;
-  -webkit-mask: radial-gradient(120% 130% at 50% 50%, #000 55%, transparent 100%);
-  mask: radial-gradient(120% 130% at 50% 50%, #000 55%, transparent 100%);
 }
 
-/* ─── Headlines ─── */
+.ln-cta-orbit::before,
+.ln-cta-orbit::after {
+  position: absolute;
+  inset: 33px;
+  border: 1px solid rgba(0, 255, 169, 0.05);
+  border-radius: 50%;
+  content: '';
+}
 
-.ln-cta-headline {
-  font-family: 'Geist Pixel Line', sans-serif;
-  font-size: clamp(28px, 4vw, 44px);
+.ln-cta-orbit::after {
+  inset: 76px;
+  border-color: rgba(115, 201, 237, 0.045);
+}
+.ln-cta-orbit--one {
+  top: -190px;
+  right: -80px;
+  animation: ln-cta-orbit-drift 23s ease-in-out infinite alternate;
+}
+.ln-cta-orbit--two {
+  bottom: -280px;
+  left: -75px;
+  width: 470px;
+  height: 470px;
+  animation: ln-cta-orbit-drift 28s ease-in-out infinite alternate-reverse;
+}
+.ln-cta-orbit--two::before {
+  inset: 50px;
+}
+.ln-cta-orbit--two::after {
+  inset: 100px;
+}
+
+.ln-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+.ln-cta-content .ln-section-kicker {
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.ln-cta-content h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-geist-pixel-line);
+  font-size: clamp(2.6rem, 5.2vw, 4.45rem);
   font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  margin: 0 0 12px;
+  letter-spacing: -0.078em;
+  line-height: 1.04;
+  text-wrap: balance;
 }
 
-.ln-cta-sub {
-  font-family: 'Geist', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.35);
-  margin: 0 0 32px;
-  max-width: 46ch;
-  position: relative;
-  z-index: 1;
+.ln-cta-content h2 span {
+  color: var(--color-primary);
 }
-
-/* ─── Buttons ─── */
-
-.ln-cta-buttons {
-  display: flex;
-  gap: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.ln-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Geist Mono', monospace;
+.ln-cta-description {
+  max-width: 58ch;
+  margin: 19px auto 0;
+  color: var(--text-muted);
   font-size: 13px;
-  font-weight: 500;
-  padding: 11px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition:
-    filter 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  line-height: 1.7;
+}
+.ln-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+.ln-cta-actions .ln-button {
+  min-height: 45px;
 }
 
-.ln-cta-btn--primary {
-  background: #fff;
-  color: var(--bg-body);
-  border: 1px solid #fff;
+.ln-cta-status {
+  display: flex;
+  max-width: 65ch;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px auto 0;
+  color: rgba(176, 197, 183, 0.73);
+  font-size: 9px;
+  line-height: 1.6;
 }
 
-.ln-cta-btn--primary:hover {
-  filter: brightness(0.88);
-  transform: translateY(-1px);
+.ln-cta-status > span {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  box-shadow: 0 0 9px rgba(115, 201, 237, 0.37);
+}
+.ln-cta-access-note {
+  margin: 8px 0 0;
+  color: rgba(153, 175, 160, 0.58);
+  font-family: var(--font-geist-mono);
+  font-size: 8px;
+  line-height: 1.5;
 }
 
-.ln-cta-btn--secondary {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+@keyframes ln-cta-border-turn {
+  to {
+    --ln-cta-angle: 360deg;
+  }
+}
+@keyframes ln-cta-orbit-drift {
+  from {
+    transform: translate3d(-8px, -5px, 0) rotate(-4deg);
+  }
+  to {
+    transform: translate3d(8px, 5px, 0) rotate(4deg);
+  }
 }
 
-.ln-cta-btn--secondary:hover {
-  border-color: rgba(0, 255, 169, 0.35);
-  background: rgba(0, 255, 169, 0.06);
-  color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
-}
-
-/* ─── Responsive ─── */
-
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .ln-cta-section {
-    padding: 72px 0 96px;
+    padding: 75px 17px 83px;
   }
-
-  .ln-cta-card {
-    padding: 36px 24px 32px;
+  .ln-cta-shell {
+    min-height: 0;
+    padding: 45px 19px;
+    border-radius: 17px;
   }
-
-  .ln-cta-buttons {
+  .ln-cta-content h2 {
+    font-size: clamp(2.2rem, 9.7vw, 3.1rem);
+  }
+  .ln-cta-description {
+    font-size: 12px;
+  }
+  .ln-cta-actions {
+    align-items: stretch;
     flex-direction: column;
+  }
+  .ln-cta-actions .ln-button {
     width: 100%;
   }
+  .ln-cta-status {
+    text-align: left;
+  }
+  .ln-cta-orbit {
+    width: 270px;
+    height: 270px;
+  }
+  .ln-cta-orbit--two {
+    width: 330px;
+    height: 330px;
+  }
+}
 
-  .ln-cta-btn {
-    justify-content: center;
+@media (prefers-reduced-motion: reduce) {
+  .ln-cta-shell::before,
+  .ln-cta-orbit {
+    animation: none;
   }
 }
